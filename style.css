@@ -449,4 +449,24 @@ ol {
     .socials a {
         margin-right: 10px;
     }
+
+    .explore, .connect {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .explore a, .explore li, .connect a, .connect li {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .explore, .connect {
+        align-items: center;
+    }
+
+    .explore li, .connect li {
+        margin-left: 0;
+        text-align: center;
+    }
+}
 }
