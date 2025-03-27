@@ -38,9 +38,9 @@ background: #4c4c4c;
 
 body {
     min-height: 100vh;
-    background-color: var(--dwhite);
+    background-color: var(--black);
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden ;
+    overflow-x: visible ;
 }
 
 /* topnav */
@@ -100,24 +100,9 @@ header {
     font-size: 16px;
 }
 
-.right-cont button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.right-cont svg {
-    transition: 0.3s;
-}
-
-.right-cont svg:hover {
-    transform: translateY(-5px);
-}
-
 /* main-container */
 .main-cont {
-    height: 100vh;
-    z-index: 5;   
+    height: 100vh; 
 }
 
 .main-cont-footer {
@@ -182,42 +167,15 @@ header {
     animation: bounce 1s;
 }
 
-/* quote */
-.quote-bar {
-    height: 200px;
-    width: 100%;
-    background-color: var(--dark);
-    display: flex;
-    align-items: center;
-    padding: 0 10rem 0 10rem;
-}
-
-.quote-bar p {
-    color: var(--dwhite);
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2vh;
-}
-
 /* plan maker */
 main {
     padding: 200px;
-    background-image: url(imgs/pngtree-memphis-torn-paper-notepad-picture-image_1739026.jpg);
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    justify-content: center;
+    background-color: var(--dwhite);
 }
 
-.plan {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.notes {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.checklist {
+.plan, .notes, .checklist {
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -255,6 +213,7 @@ textarea, input {
     border: 1px solid #ccc;
     border-radius: 5px;
     border: 2px solid black;
+    flex-wrap: wrap;
 }
 
 ul {
@@ -296,16 +255,18 @@ ol {
 #plans-container, #notes-container, #tasks-container, #records-container {
     margin-top: 20px;
     padding: 10px;
-    background-color: var(--dwhite);
+    background-color: #ffffff;
     border-radius: 30px;
     border: 3px solid black;
+    flex-wrap: wrap;
     /* background-image: linear-gradient(to bottom, #000000 2px, transparent 1px);
     background-size: 100% 20px; */
 }
 
-#plans-container ol, #notes-container ul, #tasks-container ul {
+#plans-container ol, #notes-container ul, #tasks-container ul, #records-container ul {
     padding-left: 20px;
     margin-top: 10px;
+    width: 100%;
 }
 
 /* remove button */
@@ -375,4 +336,119 @@ ol {
     font-weight: 300;
     color: var(--dwhite);
     margin-top: 15px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .middle-cont {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .middle-cont ol {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .middle-cont li {
+        margin: 10px 0;
+    }
+
+    .main-cont {
+        padding: 20px;
+    }
+
+    .main-cont-footer-index {
+        margin-top: 200px;
+    }
+
+    .home-cont {
+        margin-top: 200px;
+    }
+
+    .plan, .notes, .checklist, .records {
+        margin: 70px 0;
+        text-align: center;
+    }
+
+    #plans-container, #notes-container, #tasks-container, #records-container {
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .deets {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .explore, .connect {
+        padding-left: 0;
+    }
+
+    .logo1 {
+        height: 100px;
+    }
+
+    .socials a img {
+        height: 30px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    textarea, input {
+        width: 100%;
+    }
+
+    ul, ol {
+        padding-left: 10px;
+    }
+
+    .home-cont-inside h1 {
+        font-size: 6vh;
+    }
+
+    .home-cont-inside h4 {
+        font-size: 1.2vh;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    .middle-cont li {
+        font-size: 14px;
+    }
+
+    .home-cont-inside h1 {
+        font-size: 5vh;
+    }
+
+    .home-cont-inside h4 {
+        font-size: 1vh;
+    }
+
+    .deets {
+        padding: 20px;
+    }
+
+    .logo1 {
+        height: 80px;
+    }
+
+    .socials a img {
+        height: 25px;
+    }
 }
